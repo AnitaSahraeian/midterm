@@ -1,0 +1,87 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif; /* You can change the font based on the mockup */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* A light background for starters */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Optional: Container for limiting content width */
+/* You might apply this class to your <main> or other main sections in HTML */
+.container {
+    max-width: 960px; /* Or any width suitable for your mockup */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    position: relative; /* Allows .header-content to be positioned on top of the image */
+    text-align: center;
+    color: white; /* Text color for content on the header */
+}
+
+header .header-image {
+    width: 100%; /* Image takes full width of the header */
+    height: auto;
+    display: block; /* Removes extra space below the image */
+}
+
+header .header-content {
+    position: absolute; /* Positions it over the image */
+    top: 50%; /* Vertically center */
+    left: 50%; /* Horizontally center */
+    transform: translate(-50%, -50%); /* Precisely centers the element */
+    width: 100%; /* Allows content to span full width if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text readability */
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #aad4cf; /* Primary color */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex; /* Arranges navigation items in a row */
+    justify-content: center;
+    gap: 20px; /* Space between items */
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+header nav ul li a:hover {
+    color: #aad4cf; /* Change color on hover */
+}
+
+/* Main Content Area Styles */
+main {
+    padding: 20px;
+    max-width: 960px; /* You might apply the .container class here instead */
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the main content block */
+}
+
+/* Article Section Styles */
+article {
+    margin-bottom: 40px;
+    overflow: hidden; /* Clears the float */
+}
+
+article h2 {
+    color: #aad4cf;
+    margin-bottom: 20px;
+    text-align
