@@ -1,78 +1,95 @@
 /* Base Styles */
 body {
-    font-family: Arial, sans-serif; /* You can change the font based on the mockup */
+    font-family: Arial, sans-serif; /* A common sans-serif font */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* A light background for starters */
-    color: #333;
+    background-color: #aad4cf; /* The light teal-green background from the mockup */
+    color: #333; /* General text color */
     line-height: 1.6;
-}
-
-/* Optional: Container for limiting content width */
-/* You might apply this class to your <main> or other main sections in HTML */
-.container {
-    max-width: 960px; /* Or any width suitable for your mockup */
-    margin: 0 auto;
-    padding: 20px;
+    font-size: 16px; /* Base font size */
 }
 
 /* Header Styles */
 header {
-    position: relative; /* Allows .header-content to be positioned on top of the image */
+    position: relative;
     text-align: center;
-    color: white; /* Text color for content on the header */
+    color: white;
+    /* Use padding-bottom to create space for the nav that is 'below' the main image content */
+    padding-bottom: 50px; /* Space for the navigation bar */
+    margin-bottom: 30px; /* Space between header and main content */
+    overflow: hidden; /* To contain floated/positioned elements */
 }
 
 header .header-image {
-    width: 100%; /* Image takes full width of the header */
-    height: auto;
-    display: block; /* Removes extra space below the image */
+    width: 100%;
+    height: 300px; /* Fixed height for the header image as seen in mockup */
+    object-fit: cover; /* Ensures the image covers the area, cropping if necessary */
+    display: block;
+    filter: brightness(0.8); /* Slightly darken image for text readability, adjust as needed */
 }
 
 header .header-content {
-    position: absolute; /* Positions it over the image */
-    top: 50%; /* Vertically center */
-    left: 50%; /* Horizontally center */
-    transform: translate(-50%, -50%); /* Precisely centers the element */
-    width: 100%; /* Allows content to span full width if needed */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text readability */
-    padding: 20px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px); /* Covers main image area, excluding nav space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 3em;
-    color: #aad4cf; /* Primary color */
+    font-size: 4.5em; /* Larger font for the title */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 2px; /* Slight letter spacing for title as seen in mockup */
+}
+
+header nav {
+    position: absolute; /* Position nav absolutely within header to be at the bottom */
+    bottom: 0; /* Aligned to the bottom of the header */
+    width: 100%;
+    background-color: transparent; /* Nav background is part of the header image in mockup */
+    padding: 10px 0;
 }
 
 header nav ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0 0;
-    display: flex; /* Arranges navigation items in a row */
+    margin: 0;
+    display: flex;
     justify-content: center;
-    gap: 20px; /* Space between items */
+    gap: 50px; /* Space between navigation items */
 }
 
 header nav ul li a {
-    color: white;
+    color: white; /* Nav text color */
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.2em;
     padding: 5px 10px;
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #aad4cf; /* Change color on hover */
+    color: #333; /* Change color on hover */
 }
 
 /* Main Content Area Styles */
 main {
-    padding: 20px;
-    max-width: 960px; /* You might apply the .container class here instead */
-    margin: 20px auto;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the main content block */
+    padding: 40px 20px;
+    max-width: 960px; /* Content width */
+    margin: 0 auto; /* Center the main content */
+    background-color: white; /* White background for content area */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Rounded corners */
+    /* Add top margin if needed, but mockup seems to place it immediately after header */
+    margin-top: -20px; /* Pull main content up slightly to overlap header area, adjust as needed */
+    position: relative; /* For z-index if overlapping */
+    z-index: 1; /* Ensures it's above header if overlapping */
 }
 
 /* Article Section Styles */
@@ -83,5 +100,139 @@ article {
 
 article h2 {
     color: #aad4cf;
+    margin-bottom: 25px;
+    text-align: left;
+    font-size: 2em;
+}
+
+article .article-image {
+    width: 250px;
+    height: auto;
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Facts Section Styles */
+.facts {
+    margin-bottom: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* A thin separator line */
+}
+
+.facts h3 {
+    color: #aad4cf;
+    text-align: left;
     margin-bottom: 20px;
-    text-align
+    font-size: 1.8em;
+}
+
+.facts ul {
+    list-style: disc inside;
+    padding-left: 0;
+}
+
+.facts ul li {
+    margin-bottom: 8px;
+}
+
+/* Contact Form Section Styles */
+.contact-form {
+    background-color: #f9f9f9; /* Slightly off-white for the form background */
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+}
+
+.contact-form h3 {
+    color: #aad4cf;
+    text-align: left;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 24px); /* Full width minus padding and border */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.05em;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Radio Button Group Styles */
+.contact-form .radio-group {
+    margin-bottom: 20px;
+}
+
+.contact-form .radio-group label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+.contact-form .radio-group input[type="radio"] {
+    margin-right: 5px;
+    width: auto;
+}
+
+.contact-form button {
+    background-color: #aad4cf;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.contact-form button:hover {
+    background-color: #8bbcb5; /* Slightly darker on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: transparent; /* Footer background is the same as body background */
+    color: white; /* Text color is white */
+    text-align: right; /* Aligned to the right as per mockup (bottom right corner) */
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+    position: relative; /* For positioning copyright text */
+}
+
+footer p {
+    margin: 0;
+    /* Adjust positioning to be bottom-right as seen in mockup */
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: fit-content; /* Only take width of content */
+    background-color: rgba(0,0,0,0.3); /* Small transparent background for readability */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
